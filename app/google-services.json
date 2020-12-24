@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "569616255919",
+    "project_id": "stock-inventory-manageme-beb41",
+    "storage_bucket": "stock-inventory-manageme-beb41.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:569616255919:android:0bf3d21b2be3f7f4507d5a",
+        "android_client_info": {
+          "package_name": "com.example.stockinventorymanagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "569616255919-jf1o2q7h1jnm74ka83ifpnetbgg4vllj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLkWYfm50GW1ERNK5bdKoo0PSB14_jBAk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "569616255919-jf1o2q7h1jnm74ka83ifpnetbgg4vllj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
