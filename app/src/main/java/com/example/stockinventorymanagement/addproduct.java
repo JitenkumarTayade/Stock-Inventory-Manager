@@ -3,6 +3,7 @@ package com.example.stockinventorymanagement;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -17,59 +18,71 @@ import com.google.android.material.textfield.TextInputLayout;
 import java.util.ArrayList;
 
 public class addproduct extends AppCompatActivity {
-    Button btn;
-    EditText et,et2,et3;
-    String st,st2,st3;
- /**   ArrayList<String>addArray = new ArrayList<String>();
-    EditText txt;
-    ListView show; */
-  //  EditText et1,et2,et3;
-  // String st;
+    EditText editText_pname,editText_brate;
+    Button button_add,button_view;
+   //
+   // DatabaseHelper myDB;
+//
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addproduct);
 
-        btn = (Button) findViewById(R.id.save_product);
-        et = (EditText) findViewById(R.id.pname);
-        et2 = (EditText) findViewById(R.id.brate);
-        et3 = (EditText) findViewById(R.id.category);
 
 
-        btn.setOnClickListener(new View.OnClickListener() {
+
+        editText_pname = findViewById(R.id.edittext_pname);
+        editText_brate = findViewById(R.id.edittext_brate);
+        button_add = findViewById(R.id.button_addproduct);
+        button_view = findViewById(R.id.Button_viewproduct);
+
+
+        button_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                st = et.getText().toString();
-                st2=et2.getText().toString();
-                st3=et3.getText().toString();
-                Intent intent = new Intent(addproduct.this, Productlist.class);
-                intent.putExtra("value", st);
-                intent.putExtra("value2",st2);
-                intent.putExtra("value3",st3);
-                startActivity(intent);
-                // finish();
+                String stringPName = editText_pname.getText().toString();
+                String stringBRate = editText_brate.getText().toString();
+
+                if (stringPName.length() <=0 || stringBRate.length() <=0){
+                    Toast.makeText(addproduct.this, "Enter All Data", Toast.LENGTH_SHORT).show();
+                }else {
+                    DatabaseHelper databaseHelperClass = new DatabaseHelper(addproduct.this);
+                    EmployeeModelClass employeeModelClass = new EmployeeModelClass(stringPName,stringBRate);
+                    databaseHelperClass.addProduct(employeeModelClass);
+                    Toast.makeText(addproduct.this, "Add Product Successfully", Toast.LENGTH_SHORT).show();
+                    finish();
+                    startActivity(getIntent());
+                }
             }
         });
-        /** btn.setOnClickListener(new View.OnClickListener() {
-        @Override public void onClick(View v) {
-        st2=et2.getText().toString();
-        Intent intent = new Intent(addproduct.this,Productlist.class);
-        intent.putExtra("value",st);
-        startActivity(intent);
-        // finish();
-        }
+
+//to call next activity for read data
+
+        button_view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(addproduct.this,Productlist.class);
+                startActivity(intent);
+            }
         });
-         btn.setOnClickListener(new View.OnClickListener() {
-        @Override public void onClick(View v) {
-        st3=et3.getText().toString();
-        Intent intent = new Intent(addproduct.this,Productlist.class);
-        intent.putExtra("value",st);
-        startActivity(intent);
-        // finish();
-        }
-        });
-         */
+
+
+
+
+
+
+
+
+
+
+    //    myDB = new DatabaseHelper(this);
+
+
+
+
+
     }
 
 }

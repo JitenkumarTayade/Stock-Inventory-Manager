@@ -28,37 +28,44 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/pname"
+            android:id="@+id/edittext_pname"
             android:hint="Product Name"
             android:layout_margin="10dp"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/brate"
+            android:id="@+id/edittext_brate"
             android:hint="Buy Rate"
-            android:layout_margin="10dp"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/category"
-            android:hint="Product Category"
-            android:layout_margin="10dp"/>
+            android:layout_margin="10dp"
+            android:inputType="number"/>
 
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Save"
+            android:text="Add Product"
             android:background="#000"
             android:textColor="#fff"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:id="@+id/save_product"
+            android:id="@+id/button_addproduct"
             android:layout_margin="10dp"
 
             />
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Product List"
+            android:background="#000"
+            android:textColor="#fff"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/Button_viewproduct"
+            android:layout_margin="10dp"
+
+            />
 
     </LinearLayout>
 
