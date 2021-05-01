@@ -11,6 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -19,7 +21,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class home extends AppCompatActivity  {
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
@@ -28,12 +30,106 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
 
 
 
+    //add product
+    EditText editText_pname,editText_brate;
+    Button button_add,button_view;
+    //
+
+//view trans
+Button view_trans,save_product;
+//
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        //add product
+        editText_pname = findViewById(R.id.edittext_pname);
+        editText_brate = findViewById(R.id.edittext_brate);
+        button_add = findViewById(R.id.button_addproduct);
+        button_view = findViewById(R.id.Button_viewproduct);
+
+/**
+        button_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String stringPName = editText_pname.getText().toString();
+                String stringBRate = editText_brate.getText().toString();
+
+                if (stringPName.length() <=0 || stringBRate.length() <=0){
+                    Toast.makeText(home.this, "Enter All Data", Toast.LENGTH_SHORT).show();
+                }else {
+                    DatabaseHelper databaseHelperClass = new DatabaseHelper(home.this);
+                    EmployeeModelClass employeeModelClass = new EmployeeModelClass(stringPName,stringBRate);
+                    databaseHelperClass.addProduct(employeeModelClass);
+                    Toast.makeText(home.this, "Add Product Successfully", Toast.LENGTH_SHORT).show();
+                    finish();
+                    startActivity(getIntent());
+                }
+            }
+        });
+ */
+//to call next activity for read data
+
+        button_view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(home.this,Productlist.class);
+                startActivity(intent);
+            }
+        });
+        //
+
+//view trans
+        view_trans=findViewById(R.id.view_transproduct);
+        save_product=findViewById(R.id.save_productin);
+
+
+
+        view_trans.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(home.this,Transactions.class);
+                startActivity(intent);
+            }
+        });
+
+
+//pin pout
+        callpin = findViewById(R.id.pin);
+        callpout = findViewById(R.id.pout);
+
+
+        callpin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(home.this, productin.class);
+                startActivity(intent);
+            }
+        });
+
+
+        callpout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent(home.this, productout.class);
+                startActivity(intent2);
+            }
+        });
+        calladdp = findViewById(R.id.button_addproduct);
+        calladdp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(home.this, addproduct.class);
+                startActivity(intent);
+            }
+        });
+
+/**
+
 
         //hooks
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -127,7 +223,7 @@ navigationView.setNavigationItemSelectedListener(this);
                 Intent intent2 = new Intent(home.this,Allparties.class);
                 startActivity(intent2);
                 break;
-*/
+
             case R.id.nav_transactions:
                 Intent intent3 = new Intent(home.this,Transactions.class);
                 startActivity(intent3);
@@ -145,5 +241,9 @@ navigationView.setNavigationItemSelectedListener(this);
         drawerLayout.closeDrawer(GravityCompat.START);
 
         return true;
+
+        */
+
+
     }
 }

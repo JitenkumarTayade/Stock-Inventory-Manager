@@ -139,7 +139,20 @@
             android:textColor="#fff"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:id="@+id/save_product"
+            android:id="@+id/save_productout"
+            android:layout_margin="10dp"
+
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Trasaction"
+            android:background="#000"
+            android:textColor="#fff"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/view_transproduct"
             android:layout_margin="10dp"
 
             />

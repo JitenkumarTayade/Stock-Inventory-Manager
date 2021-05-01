@@ -33,32 +33,34 @@
         android:textSize="18sp"
         android:fontFamily="@font/anticsans_regular"
         />
+
     <LinearLayout
+        android:gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="20dp"
         android:orientation="vertical">
 
+        <EditText
+            android:id="@+id/edittext_phoneno"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:paddingLeft="2dp"
+            android:background="#ffffff"
+            android:drawableLeft="@drawable/username"
+            android:hint="Phone No"
+            android:textColor="@color/black"/>
 
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/phoneNo"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:hint="Phone Number" >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="phone"
-            />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
+        <EditText
+            android:id="@+id/edittext_password"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:background="#ffffff"
+            android:drawableLeft="@drawable/password"
+            android:hint="Password"
+            android:textColor="@color/black" />
+    </LinearLayout>
 
 
         <Button
@@ -67,13 +69,32 @@
             android:text="Next"
             android:background="#000"
             android:textColor="#fff"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="5dp"
-            android:id="@+id/home_screen"
-            android:onClick="callVerifyOtpScreen"
+            android:id="@+id/button_login"
             />
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="190dp">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:textColor="@color/black"
+            android:text="Not Registered?"/>
+
+        <TextView
+            android:id="@+id/textview_register"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:paddingLeft="5dp"
+            android:textStyle="bold"
+            android:textColor="#1DA1F2"
+            android:text="Register"/>
 
     </LinearLayout>
 

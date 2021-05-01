@@ -22,7 +22,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //Database version
     private static final int DATABASE_VERSION = 1;
     //Database Name
-    private static final String DATABASE_NAME = "employee_database";
+    private static final String DATABASE_NAME = "employee_database.db";
     //Database Table name
     private static final String TABLE_NAME = "EMPLOYEE";
     //Table columns

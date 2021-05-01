@@ -1,5 +1,6 @@
 package com.example.stockinventorymanagement;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,10 +16,14 @@ public class Productlist extends AppCompatActivity {
     RecyclerView recyclerView;
 
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_productlist);
+
 
 
         recyclerView = findViewById(R.id.recyclerView);
@@ -26,7 +31,7 @@ public class Productlist extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
 
         DatabaseHelper databaseHelperClass = new DatabaseHelper(this);
-        List<EmployeeModelClass> employeeModelClasses = databaseHelperClass.getEmployeeList();
+         List<EmployeeModelClass> employeeModelClasses = databaseHelperClass.getEmployeeList();
 
         if (employeeModelClasses.size() > 0){
             EmployeeAdapterClass employeadapterclass = new EmployeeAdapterClass(employeeModelClasses,Productlist.this);
@@ -35,16 +40,9 @@ public class Productlist extends AppCompatActivity {
             Toast.makeText(this, "There is no product in the database", Toast.LENGTH_SHORT).show();
         }
 
-
-
-
-    }
-
-
-
        // myDB = new DatabaseHelper(this);
 
 
-
+}
     }
 

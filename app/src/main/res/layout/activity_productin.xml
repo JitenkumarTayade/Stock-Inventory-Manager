@@ -36,10 +36,10 @@
             android:textSize="18sp"
             android:gravity="start"/>
 
-        <TextView
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/date_text"
+            android:id="@+id/edittext_date"
             android:layout_marginLeft="10dp"
             android:background="#f8f8ff"
             />
@@ -59,7 +59,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/pinput"
+            android:id="@+id/edittext_pinput"
             android:layout_marginLeft="10dp"
             android:background="#f8f8ff"
             />
@@ -76,10 +76,10 @@
             android:textSize="18sp"
             android:gravity="start"/>
 
-        <TextView
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/transtypeinput"
+            android:id="@+id/edittext_transtypeinput"
             android:layout_marginLeft="10dp"
             android:background="#00FF00"
             android:text="IN"
@@ -104,7 +104,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/csinput"
+            android:id="@+id/edittext_csinput"
             android:layout_marginLeft="10dp"
             android:background="#f8f8ff"
             />
@@ -124,7 +124,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/qinput"
+            android:id="@+id/edittext_qinput"
             android:layout_marginLeft="10dp"
             android:background="#f8f8ff"
             />
@@ -139,7 +139,7 @@
             android:textColor="#fff"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:id="@+id/save_product"
+            android:id="@+id/save_productin"
             android:layout_margin="10dp"
 
             />
